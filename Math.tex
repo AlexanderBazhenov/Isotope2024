@@ -1,0 +1,423 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Манифест интервальной статистики}
+	%А.Н.~Баженов, С.И. Жилин, С.И. Кумков, С.П. Шарый.
+	%		Обработка и анализ интервальных данных. Издательство «ИКИ»		2024 г.
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.4\textwidth]{Figures/Обложка книги РХД.jpg}
+		%	\includegraphics[width=0.8\textwidth]{7.mps}	
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Трудности в использовании интервальной неопределённости}
+
+\begin{center}	
+ТРУДНОСТИ В ИСПОЛЬЗОВАНИИ \\ ИНТЕРВАЛЬНОЙ НЕОПРЕДЕЛЁННОСТИ
+\end{center}	
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Трудности в использовании интервальной неопределённости}
+	
+Общая проблема --- интерпретация интервала как равномерного распределения
+
+\medskip
+Наиболее актуальный документ по стандарным атомным весам
+\medskip
+T.Prohaska, J.Irrgeher, J.Benefield, et al. 
+
+\medskip
+Standard atomic weights of the elements 2021 (IUPAC Technical Report) 
+
+Pure Appl. Chem. 2022; 94(5): 573–600
+
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Интерпретация интервала как равномерного распределения}
+{\footnotesize 
+	The interval does not imply any statistical distribution of atomic weight values between the lower and upper bound (e.g. the arithmetic mean of a and b is not necessarily the most likely value). Similarly, the interval does not convey a simple statistical representation of uncertainty. The probability density function may differ case by case, due to varying sources and their proportions may need to be considered. 
+	
+	If no additional information is available or utilized, \un{the probability density function} associated with the standard atomic weights \un{can be considered as uniform (rectangular)}.
+}
+Формулировка, провоцирующая ложную интерпретацию:
+
+Если нет дополнительной доступной или уже используемой информации, о функции плотности вероятности, связанной с атомными весами, то она может считаться равномерной (прямоугольной).
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Непонимание интервальной арифметики}
+
+Рассмотрим публикацию IUPAC.
+
+\medskip	
+A. Possolo, A.M.H. van der Veen, J. Meija and D.B. Hibbert
+<<Interpreting and propagating the uncertainty of the standard atomic weights>> (IUPAC Technical Report). \\
+Pure Appl. Chem. 2018; 90(2): 395–424 %\cite{IUPACUncertainty}
+
+
+
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Непонимание интервальной арифметики}
+Исходные данные
+	\begin{align*}
+A_r(H) = & \, [1.007 84, 1.008 11],\\
+A_r(O) = & \,[15.999 03, 15.999 77]], \\
+M_r(H_2O) = & \, 2 \cdot[1.007 84, 1.00811] + [15.99903,15.999 77] \\
+ = & \,[18.01471, 18.015 99]
+\end{align*}
+Расчёт массовой доли кислорода в молекуле воды даёт разные результаты в зависимости от способа расчёта
+\begin{align}
+		w_{H_2O}(O) = & \frac{1}{2A_r(H)/A_r(O)+1} = &[0.888 \un{083}, \, 0.888 \un{114}] \label{H2O1} \\
+		\ne & \frac{A_r(O)}{M_r(H_2O)} =& [0.888 \un{046}, \, 0.888\un{150}]. \label{H2O2}
+\end{align}
+Сравним ширины \eqref{H2O1}	и \eqref{H2O2}:
+$wid (1) = 0.000\un{031} \ne wid (2) = 0.000\un{104} $.
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Непонимание интервальной арифметики}
+
+
+	
+<<Ввиду очевидных практических трудностей, связанных с применением интервальной арифметики, и учитывая
+желательность количественной оценки и распространения неопределенностей в расчетах, связанных с атомными весами, мы рекомендуем
+вместо этого вероятностный подход к интерпретации интервалов, который мы считаем полностью последовательным
+с мотивацией, которая побудила CIAAW принять такое обозначение. 
+\medskip
+В остальной части этого отчета объясняется основа и
+общие процедуры такого подхода и иллюстрирует их применение на конкретных и содержательных примерах.>>
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Непонимание интервальной арифметики}
+	
+	\begin{figure}[ht] 
+		\centering\small
+		\unitlength=1mm
+		\includegraphics[width=100mm]{Figures/BoronTable1data.png}
+		\caption{Данные для атомных весов образцов бора} 
+		\label{f:BoronTable1data}
+	\end{figure}	
+	
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Непонимание интервальной арифметики}
+Множественные пики и впадины на синей кривой обусловлены тем, что соответствующее распределение представляет собой смесь 13 различных прямоугольных распределений.
+\begin{figure}[ht] 
+	\centering\small
+	\unitlength=1mm
+	\includegraphics[width=80mm]{Figures/BoronTable1.png}
+	\caption{<<Плотность вероятности>> для атомных весов образцов бора и её аналитическая аппроксимация} 
+	\label{f:BoronTable1}
+\end{figure}	
+	
+	
+\end{frame}
+
+\begin{frame}
+\frametitle{Проблемы описания интервальных весов}
+T.B. Coplen, N.E. Holden, T. Ding, H.A.J. Meijer, J. Vogl, and X. Zhu, <<The Table of Standard Atomic Weights-An exercise in consensus>>, \\ Rapid Commun Mass Spectrom. 2022; 36:e8864. %\cite{IUPACCosensus}	
+
+\begin{itemize}
+	\item Элементы с 2 изотопами
+	\item Элементы с асимметричнными распределениями изотопов
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Элементы с 2 изотопами }
+<<\ldots введения нового определения значений атомного веса в 1979 г.
+\ldots неопределенности в значении атомного веса для элементов с двумя стабильными изотопами стали асимметричными; то есть, неопределенность в верхней части значения атомного веса не была
+такой же, как и на нижней стороне. Это привело к серьезной проблеме
+которая сохраняется в течение последних четырех десятилетий. Середина симметричной неопределенности может соответствовать значениям атомного веса, которое не относится ни к одному известному источнику этого элемента, обнаруженному в природе. Естественное решение этой проблемы
+было бы введением асимметричных неопределенностей. К сожалению,
+Комиссия последовательно отвергала это решение. В итоге,
+это привело к введению интервалов атомного веса для
+выбранных элементов \ldots >>
+\end{frame}
+
+\begin{frame}
+		\frametitle{Элементы с асимметричнными распределениями изотопов }
+\begin{figure}[ht] 
+	\centering\small
+	\unitlength=1mm
+	\includegraphics[width=60mm]{Figures/LiExample.png}
+	\caption{Пример распределения атомных масс для стандартного образца карбоната лития} 
+	\label{f:LiExample}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{3 способа описания неопределённостей   }
+	\begin{figure}[ht] 
+		\centering\small
+		\unitlength=1mm
+		\includegraphics[width=60mm]{Figures/Uncertainty_cases.png}
+		\caption{Типы представления неопределённостей} 
+		\label{f:Uncertainty cases}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{3 способа описания неопределённостей   }
+A,\\ пример одного из 21 элемента, имеющего значение $A_r (E)$, определяемое одним
+изотопом, Guide to the Expression of Uncertainty in
+Measurement, оцененная распределением Гаусса с коэффициентом охвата 6.
+
+B, \\пример одного из 49 элементов, имеющих стандартный атомный вес
+значение и неопределенность, определяемые
+консенсусом; наибольшее значение вероятности
+функция плотности не обязательно должно совпадать с $A_r (E)$
+
+C,\\
+Пример одного из 14 элементов, имеющих
+согласованные стандартные атомные веса, выраженные как
+интервалы; функции плотности вероятности неизвестны. 
+
+Распределение функции вероятностей
+также неизвестны для 6 элементов, имеющих
+метку «r» (гелий, никель, медь, цинк, селен и стронций)
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Обработка данных методами интервального анализа}
+
+
+\begin{center}	
+ОБРАБОТКА ДАННЫХ \\
+МЕТОДАМИ ИНТЕРВАЛЬНОГО АНАЛИЗА \\
+--- примеры
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Обработка данных методами интервального анализа}
+Обработка данных методами интервального анализа. Теория --- книга	\cite{BookIntStat}
+\begin{itemize}
+	\item Представление данных (диаграмма рассеяния)
+	\item Интервальные оценки (мода)
+	\item Одновременное вычисление внешних и внутренних оценок (твины)
+	\item Минимумы по включению
+	\item $\ldots$
+\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Вариации углерода в органических объектах}
+	
+Рассмотрим часть данных, относящихся к углероду природных объектов. 
+
+\begin{table}[h!]
+	\begin{center}
+		{\small
+			\begin{tabular}{ccc}
+				\hline
+				Категория & Нижняя & Верхняя \\
+				~ & граница & граница \\ 
+				\hline
+				Наземные растения (C3 метаболический процесс)	& -35 & -21 \\
+				Наземные растения (C4 метаболический процесс)	& -16 & -9 \\
+				Наземные растения  (CAM метаболический процесс)	& -34 & -10 \\
+				\hline
+				Морские организмы 	& -74.3 & -2 \\
+				Морские отложения и соединения &	-130.3 & 7 \\
+				\hline
+				Уголь &	-30 & -19 \\
+				Сырая нефть &	-44 & -16.8 \\
+				Природный этанол & -32 &  -10.3 \\
+				\hline
+			\end{tabular}
+		}
+		\caption{Вариации углерода в органических объектах} в единицах $10^3 \cdot \delta ^{13}C_{VPDB}$
+		\label{t:OrganicCarbonVariation}
+	\end{center}
+\end{table}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Вариации углерода в органических объектах}
+	
+\begin{align}
+	10^3 \cdot \delta ^{13}C_{VPDB} = \{ \
+	&	[-35, -21 ], [ -16, -9 ], [ -34, -10 ] \nonumber \\
+	&	[ -74.3, -2 ], [ -130.31, +7 ], [ -30, -19], \nonumber \\
+	& 	[ -44, -16.8], [ -32, -10.3] \	\}
+\end{align}
+
+Диаграмма рассеяния 
+\begin{figure}[ht] 
+	\centering\small
+	\unitlength=1mm
+	{\includegraphics[width=55mm]{Figures/CarbonOrganicDataIUPAC2016.png}} 
+	\caption{Вариации углерода в органических объектах} в единицах $10^3 \cdot \delta ^{13}C_{VPDB}$
+	\label{f:OrganicCarbonVariation}
+\end{figure}
+
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Вариации углерода в органических объектах}
+	
+\begin{figure}[ht] 
+	\begin{center}
+		\unitlength=1mm
+		{\includegraphics[width=60mm]{Figures/CarbonOrganicDataIUPAC2016ModeArray.png}} 
+		\caption{Интервальная мода 
+			вариаций $10^3 \cdot \delta ^{13}C_{VPDB}$ в органических объектах} 
+		\label{f:OrganicCarbonVariationMode}
+	\end{center}	
+\end{figure}
+
+Интервальная мода
+\begin{equation}
+	{\tt mode}( 10^3 \cdot \delta ^{13}C_{VPDB} ) = [-30, -21].
+\end{equation}	
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Расчёт молекулярной массы молекулы метана в виде твина}
+
+Рассмотрим  массу молекулы метана $CH_4$.
+
+Пусть источником водорода и углерода является   морская фауна. 
+
+Данные об изотопных вариациях берутся c сайта 
+
+\medskip
+https://www.sciencebase.gov/catalog/item/580e719ae4b0f497e794b7d8.
+
+\medskip
+Представим массы компонент молекулы в виде твинов в форме Нестерова.
+\begin{equation*}
+	\mbf{X}_{\subseteq} = [ \, \mbf{X}^{in} \, ,  \, \mbf{X}^{out} \, ]
+\end{equation*}
+$\mbf{X}^{in}, \mbf{X}^{out}$ --- интервалы внутренней и внешней оценки величины.
+
+\medskip
+\emph{Внешней оценкой} будет служит максимум по включению для атомов молекулы, \\
+\emph{внутренней оценкой} --- мода выборки.
+
+\end{frame}
+
+% внешняя оценка Hydrogen :  '[1.00012, 1.00017]'
+% мода Hydrogen :  '[1.00013, 1.00015]'
+%внешняя оценка Carbon :  '[12.0096, 12.0111]'
+%мода Carbon :  '[12.0102, 12.011]'
+%T_h= ['[1.00013, 1.00015]', '[1.00012, 1.00017]']
+%T_c= ['[12.0102, 12.011]', '[12.0096, 12.0111]']
+%T=T_c+4*T_h= ['[16.0109, 16.0115]', '[16.0101, 16.0118]']
+
+\begin{frame}
+	\frametitle{Расчёт молекулярной массы молекулы метана в виде твина}
+Твины атомных весов водорода и углерода
+\begin{align}
+	\mbf{M}(H) = &[ \, [1.00013, 1.00015] \, ,  \, [1.00012, 1.00017] \, ], \\
+	\mbf{M}(C) = & [ \, [12.0102, 12.011] \, ,  \, [12.0096, 12.0111] \, ]
+\end{align}	
+Твин веса молекулы метана $CH_4$
+	\begin{equation}
+		\mbf{M} (CH_4) = [ \, [16.0109, 16.0115] \, ,  \, [16.0101, 16.0118] \, ].
+	\end{equation}	
+Графическое представление твина веса молекулы метана $\mbf{M} (CH_4)$
+	\begin{figure}[ht] 
+	\begin{center}
+		\unitlength=1mm
+  \begin{picture}(90,10)
+	\put(10,0){\includegraphics[width=60mm]{Figures/TwinCH4.png}}
+	\put(45,5){\mbox{\small $X^{in}$}} 
+	\put(35,4){\vector(1,0){28}}
+	\put(57,4){\vector(-1,0){28}}
+	\put(10,-1){\vector(1,0){60}}
+	\put(60,-1){\vector(-1,0){50}}
+	\put(30,-5){\mbox{\small $X^{out}$}}
+\end{picture}	%	{\includegraphics[width=60mm]{Figures/TwinCH4.png}} 
+%		\caption{Твин молекулы метана $CH_4$} 
+		\label{f:TwinCH4}
+	\end{center}	
+\end{figure}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Мультиинтревалы --- пример технеция }
+Мультиинтревалы стабильных изтопов молибдена и рутения и наиболее долгоживущий изотоп технеция
+
+\begin{equation*}
+\begin{aligned}
+\mbf{M}_{Mo} & = [92, [94,& ~{\color{red}98}]&, 100 \ ], \\
+\mbf{M}_{Tc} &=  &[ {\color{red}98} &  ], \\
+\mbf{M}_{Ru} &= [ 96,   & [{\color{red}98}&, 102], 104 \ ].
+\end{aligned}
+\end{equation*}
+Минимум по включению мультиинтревалов стабильных изтопов молибдена и рутения содержит значение наилучшего кандидата для технеция $_{43}Tc^{55}$
+\begin{equation*}
+\mbf{M}_{Mo} \cap \mbf{M}_{Ru} = [96, {\color{red}98}] \supseteq \mbf{M}_{Tc}.
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Мультиинтревалы --- пример технеция }
+\begin{figure}[ht] 
+	\begin{center}
+		\unitlength=1mm
+		{\includegraphics[width=100mm]{Figures/MoTcRuNZmarked.png}}
+	\end{center}	
+\end{figure}	
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Программное обеспечение для анализа данных с интервальной неопределённостью}
+
+С.И.Жилин \\
+Matlab/Octave/Scilab:
+https://github.com/szhilin/octave-interval-examples\\
+https://github.com/szhilin/kinterval \\
+Julia
+https://github.com/szhilin/julia-interval-examples
+
+
+
+\medskip
+Python: \\
+базовая библиотека\\
+{\tt intvalpy} --- А.Андросов https://github.com/AndrosovAS/intvalpy, \\
+арифметика твинов Нестерова\\
+{\tt twin} --- А.Жаворонкова https://github.com/Zhavoronkova-Alina/twin\\ 
+Вычисления с изотопами\\
+{\tt MendeleevTwin} --- Т.Яворук https://github.com/Tatiana655/MendeleevTwin
+
+
+
+\end{frame}
+
